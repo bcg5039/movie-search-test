@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Header from '../containers/header'
 import Logo from '../containers/logo'
 import BigButton from '../components/big-button'
@@ -10,7 +11,9 @@ const Home = function() {
       <main>
         <Logo />
         <div className="mt5 tc">
-          <BigButton onClick={openDocs}>Get Started</BigButton>
+          <Link to="/search">
+            <BigButton>Get Started</BigButton>
+          </Link>
         </div>
       </main>
     </div>
@@ -18,12 +21,3 @@ const Home = function() {
 }
 
 export default Home
-
-function openDocs(e) {
-  if (/localhost/.test(window.location.href)) {
-    window.location = 'http://localhost:5000'
-  } else {
-    window.location =
-      'https://github.com/jrs-innovation-center/jrscode-react-starter#jrs-react-starter-kit'
-  }
-}
